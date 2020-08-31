@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://www.hibernate.org/dtd/hibernate/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernatedb</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+		<!--<property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.min_size">7</property>
+		<property name="hibernate.c3p0.max_size">53</property>
+		<property name="hibernate.c3p0.timeout">100</property>
+		<property name="hibernate.c3p0.max_statements">50</property>
+		<property name="hibernate.c3p0.idle_test_period">1000</property>
+		<property name="hibernate.c3p0.validate">true</property>-->
+		
+		<property name="hibernate.connection.provider_class">org.hibernate.hikaricp.internal.HikariCPConnectionProvider</property>
+		<property name="hibernate.hikari.minimumIdle">20</property>
+		<property name="hibernate.hikari.maximumPoolSize">300</property>
+		<property name="hibernate.hikari.connectionTimeout">10000</property>
+		<property name="hibernate.hikari.idleTimeout">20000</property>
+
+		<!-- <property name="hibernate.hbm2ddl.auto">create</property> -->
+		<property name="hibernate.hbm2ddl.auto">create</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<mapping class="com.home.entities.Employee" />
+		<mapping class="com.home.entities.Phone" />
+		<mapping class="com.home.entities.Call" />
+		<mapping class="com.home.entities.Partner" />
+	</session-factory>
+
+</hibernate-configuration>  
