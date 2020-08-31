@@ -27,13 +27,14 @@
 		<property name="hibernate.hikari.idleTimeout">20000</property>
 
 		<!-- <property name="hibernate.hbm2ddl.auto">create</property> -->
-		<property name="hibernate.hbm2ddl.auto">create</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.format_sql">true</property>
 		<mapping class="com.home.entities.Employee" />
 		<mapping class="com.home.entities.Phone" />
 		<mapping class="com.home.entities.Call" />
 		<mapping class="com.home.entities.Partner" />
+		<mapping class="com.home.entities.User" />
 	</session-factory>
 
 </hibernate-configuration>  
